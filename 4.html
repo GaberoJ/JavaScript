@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task4</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Вычисляет сумму двух чисел
+   * @param {number} first - первое число
+   * @param {number} second - второе число
+   * @return {number} сумма двух чисел, переданных в качестве параметров функции
+   */
+  function sumOfNumbers(first, second) {
+    return first + second;
+  }
+
+  /**
+   * Вычисляет разность двух чисел
+   * @param {number} first - первое число
+   * @param {number} second - второе число
+   * @return {number} разность двух чисел, переданных в качестве параметров
+   * функции, при чем меньшее число вычитается из большего. Возвращает 0, если 
+   * числа равны
+   */
+  function differenceOfNumbers(first, second) {
+    if (first > second) {
+      return first - second;
+    } else if (first < second) {
+      return second - first;
+    } else {
+      return 0;
+    }
+  }
+
+  /**
+   * Вычисляет произведение двух чисел
+   * @param {number} first - первое число
+   * @param {number} second - второе число
+   * @return {number} произведение двух чисел, переданных в качестве параметров
+   * функции
+   */
+  function multOfNumbers(first, second) {
+    return first * second;
+  }
+
+  /**
+   * Вычисляет частное двух чисел
+   * @param {number} first - первое число
+   * @param {number} second - второе число
+   * @return {number} частное двух чисел, переданных в качестве параметров
+   * функции
+   */
+  function divisionOfNumbers(first, second) {
+    return first / second;
+  }
+
+  console.log(sumOfNumbers(-8, 2));
+  console.log(differenceOfNumbers(3, 15));
+  console.log(multOfNumbers(4, 8));
+  console.log(divisionOfNumbers(4, 3));
+</script>
+</body>
+</html>

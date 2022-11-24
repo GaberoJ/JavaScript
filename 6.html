@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task6</title>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо реализовать функцию, которая будет принимать первым аргументом
+целое положительное число, в следующих трех аргументах функция принимает слова
+в разных склонениях.
+Функция должна возвращать одно из трех переданных в параметры слов подходящее
+под число, которое передано первым аргументом.
+
+Пример:
+console.log(declinationOfNumber(1, "яблоко", "яблока", "яблок")); // "яблоко"
+console.log(declinationOfNumber(2, "мяч", "мяча", "мячей")); // "мяча"
+console.log(declinationOfNumber(5, "стул", "стула", "стульев")); // "стульев"
+
+Функция должна работать с любым словом и любым целым положительным числом.
+Все аргументы, которые будут передаваться функции будут верны.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Реализует склонение слов
+   * @param {number} count - число
+   * @param {string} one - первое склонение слова
+   * @param {string} two - второе склонение слова
+   * @param {string} five - третье склонение слова
+   * @return {string} предложение с правильным склонением
+   */
+  function declinationOfNumber(count, one, two, five) {
+    if (count < 21) {
+      if (count === 1) {
+        return one;
+      } else if (count > 1 && count < 5) {
+        return two;
+      } else {
+        return five;
+      }
+    } else {
+      if (count % 10 === 1) {
+        return one;
+      } else if (count % 10 > 1 && count % 10 < 5) {
+        return two;
+      } else {
+        return five;
+      }
+    }
+  }
+
+  const userNumber = 25;
+  const word1 = declinationOfNumber(userNumber, "яблоко", "яблока", "яблок");
+  const word2 = declinationOfNumber(userNumber, "мяч", "мяча", "мячей");
+  const word3 = declinationOfNumber(userNumber, "стул", "стула", "стульев");
+
+  console.log(`У меня есть ${userNumber} ${word1}.`);
+  console.log(`У меня есть ${userNumber} ${word2}.`);
+  console.log(`У меня есть ${userNumber} ${word3}.`);
+
+</script>
+</body>
+</html>
